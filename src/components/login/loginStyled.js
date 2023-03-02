@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Body = styled.nav`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;

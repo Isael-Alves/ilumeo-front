@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import GlobalStyle from "../styles/globalStyles";
-import Login from "./login/Login";
+import GlobalStyle from "../styles/globalStyles.js";
+import Login from "./login/Login.js";
+import Home from "./Home/Home.js"
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/Home" element={<Home />} />
         </Routes>
       </BrowserRouter> 
     </>
