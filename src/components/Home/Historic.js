@@ -1,34 +1,33 @@
 import { StyleHistoric } from "./HomeStyled";
+import { format } from 'date-fns';
 
-function Historic() {
+
+function Historic({ dados }) {
   return (
     <StyleHistoric>
       <h1>Dias anteriores</h1>
       <ul>
-        <li>
-          <div className="date">03/11/23</div>
-          <div className="time">7h 30m</div>
-        </li>
-        <li>
-          <div className="date">03/11/23</div>
-          <div className="time">7h 30m</div>
-        </li>
-        <li>
-          <div className="date">03/11/23</div>
-          <div className="time">7h 30m</div>
-        </li>
-        <li>
-          <div className="date">03/11/23</div>
-          <div className="time">7h 30m</div>
-        </li>
-        <li>
-          <div className="date">03/11/23</div>
-          <div className="time">7h 30m</div>
-        </li>
+        { 
+        dados.map((dado, i) => {
+          const { startTime, finishTime } = dado;
+          const data = new Date(dado.Date);
+          const dataFor = format(data, 'dd/MM/yyyy');
+
+          const time =  (new Date(finishTime).getTime() - (new Date(startTime)).getTime());
+          const hora = (new Date(time).getHours());
+          const min = (new Date(time).getMinutes());  
+          
+           return (
+            <li key={i}>
+              <div className="date">{dataFor}</div>
+              <div className="time">{hora}h {min}m</div>
+            </li>
+           );
+        })
+        }
       </ul>
     </StyleHistoric>
   );
 }
 
 export default Historic;
-

@@ -1,16 +1,20 @@
 import React from "react";
+import { AuthContext } from "../../providers/auth.js";
 import { Body, Button } from "../login/loginStyled.js";
 import Historic from "./Historic.js";
 import { Top } from "./HomeStyled.js";
 
 function Home() {
+  const { dados } = React.useContext(AuthContext);
+  const user = dados[0].codeUser;
+   
   return (
     <Body>
       <Top>
         <section className="header">
           <h1>Relógio de ponto</h1>
           <div>
-            <h1>#4SXXFMF</h1>
+            <h1>#{user}</h1>
             <h2>Usuário</h2>
           </div>
         </section>
@@ -23,7 +27,7 @@ function Home() {
         <Button>Hora de entrada</Button>
       </Top>
 
-      <Historic />
+      <Historic dados={dados}/>
     </Body>
   );
 }
