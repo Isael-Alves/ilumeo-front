@@ -7,4 +7,9 @@ function getHistoricPoints(code) {
   return promise;
 }
 
-export { getHistoricPoints };
+function postPoint(body) {
+  const promise = axios.post(`${BASE_URL}/historic`, body );
+  return promise;
+}
+
+export { getHistoricPoints, postPoint };

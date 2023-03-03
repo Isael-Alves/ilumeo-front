@@ -14,7 +14,7 @@ function Login() {
     const promise = getHistoricPoints(code);
     promise.then((res) => {
       setDados(res.data);
-      navigate(`../Home`);
+       navigate(`../Home`);
       setCode("");
     });
 

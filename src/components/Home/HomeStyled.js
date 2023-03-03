@@ -8,7 +8,30 @@ const Top = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
+  .confirmationData {
+    h1 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 14px;
+      margin-bottom: 20px;
 
+      color: #f5f5f5;
+    }
+
+    li {
+      margin-left: 20px;
+      list-style-type: circle;
+
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 14px;
+      margin-bottom: 3px;
+
+      color: #f5f5f5;
+    }
+  }
+ 
   .header {
     display: flex;
     justify-content: space-between;
